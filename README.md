@@ -1,1 +1,2 @@
-# Projekt-AE-Kazikwoja-er
+# Projekt-AE-KK
+Gówny projekt
