@@ -10,16 +10,16 @@ public class CityData
 	public void createList(int x)
 	{
 		size = x;
-		cityTab = new Integer[x + 1][x + 1];
+		cityTab = new Integer[x][x];
 		RandomCity theRandomCity = new RandomCity();
 		theRandomCity.randomCity(cityTab, x);
 	}
 
 	public void showList()
 	{
-		for (int i = 1; i < size + 1; ++i)
+		for (int i = 0; i < size; ++i)
 		{
-			for (int j = 1; j < size + 1; ++j)
+			for (int j = 0; j < size; ++j)
 			{
 				if (cityTab[i][j] == null)
 				{

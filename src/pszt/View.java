@@ -1,27 +1,38 @@
-package pszt;
+/*package pszt;
 
 import java.awt.*;
 import javax.swing.*;
 
-/**
- * Widok
- */
-public class View
+@SuppressWarnings("serial")
+class View extends JPanel
 {
-
-	public View()
+	private PathLength thePathLength;
+	
+	public View(PathLength thePathLength)
 	{
-
-		Canvas canvas = new Canvas();
-		JFrame window = new JFrame("Komiwoja¿er");
-		JPanel panel = (JPanel) window.getContentPane();
-
-		window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		panel.add(canvas);
-		window.setVisible(true);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.thePathLength = thePathLength;
 
 	}
 
+	public void paintComponent(Graphics g)
+	{
+		int a=thePathLength.max();
+		int b=thePathLength.min();
+		g.setColor(Color.black);
+		g.fillRect(10, b, 5, a-b);
+	}
 
-}
+	public void paint()
+	{
+
+		JFrame frame = new JFrame("KOMIWOJA¯ER");
+		JPanel world = new View(thePathLength);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		frame.getContentPane().add(world);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
+
+
+}*/

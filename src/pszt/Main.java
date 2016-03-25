@@ -8,17 +8,21 @@ public class Main
 	public static void main(String[] args)
 	{
 		CityData theCityData = new CityData();
-		theCityData.createList(30);
+		theCityData.createList(5);
 		theCityData.showList();
 		PopulationData thePopulationData = new PopulationData(theCityData);
 		thePopulationData.createPopulation();
 		thePopulationData.showPopulation();
 		PathLength thePathLength = new PathLength(thePopulationData,theCityData);
-		thePathLength.calculatePath();
-		thePathLength.show();
-		
-		
-		//@SuppressWarnings("unused")
-		//View theView = new View();
+		Mutation theMutation = new Mutation(thePopulationData,theCityData);
+			
+		for(int i = 0; i<10;++i){
+			thePathLength.calculatePath();
+			thePathLength.show();
+			theMutation.mutating();
+			System.out.print("\n");
+		}
+				
 	}
+	
 }

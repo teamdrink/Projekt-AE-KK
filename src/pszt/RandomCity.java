@@ -13,9 +13,9 @@ public class RandomCity
 
 	public void randomCity(Integer[][] tab, int x)
 	{
-		for (int i = 1; i < x; ++i)
+		for (int i = 0; i < x; ++i)
 		{
-			for (int j = i + 1; j < x + 1; ++j)
+			for (int j = i; j < x ; ++j)
 			{
 				tab[i][j] = random(90) + 10;
 			}
