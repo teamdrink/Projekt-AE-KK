@@ -1,5 +1,7 @@
 package pszt;
 
+
+
 public class Main
 {
 
@@ -11,5 +13,12 @@ public class Main
 		PopulationData thePopulationData = new PopulationData(theCityData);
 		thePopulationData.createPopulation();
 		thePopulationData.showPopulation();
+		PathLength thePathLength = new PathLength(thePopulationData,theCityData);
+		thePathLength.calculatePath();
+		thePathLength.show();
+		
+		
+		//@SuppressWarnings("unused")
+		//View theView = new View();
 	}
 }

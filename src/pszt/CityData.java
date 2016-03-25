@@ -4,15 +4,15 @@ public class CityData
 {
 	public int size;
 
-	Integer[][] tab;
+	Integer[][] cityTab;
 
 
 	public void createList(int x)
 	{
 		size = x;
-		tab = new Integer[x + 1][x + 1];
+		cityTab = new Integer[x + 1][x + 1];
 		RandomCity theRandomCity = new RandomCity();
-		theRandomCity.randomCity(tab, x);
+		theRandomCity.randomCity(cityTab, x);
 	}
 
 	public void showList()
@@ -21,12 +21,12 @@ public class CityData
 		{
 			for (int j = 1; j < size + 1; ++j)
 			{
-				if (tab[i][j] == null)
+				if (cityTab[i][j] == null)
 				{
 					System.out.print("--" + " ");
 				} else
 				{
-					System.out.print(tab[i][j] + " ");
+					System.out.print(cityTab[i][j] + " ");
 				}
 			}
 			System.out.print("\n");
