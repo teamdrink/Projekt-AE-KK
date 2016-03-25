@@ -2,13 +2,14 @@ package pszt;
 
 public class CityData
 {
-	public int X;
+	public int size;
 
 	Integer[][] tab;
 
+
 	public void createList(int x)
 	{
-		X = x;
+		size = x;
 		tab = new Integer[x + 1][x + 1];
 		RandomCity theRandomCity = new RandomCity();
 		theRandomCity.randomCity(tab, x);
@@ -16,9 +17,9 @@ public class CityData
 
 	public void showList()
 	{
-		for (int i = 1; i < X + 1; ++i)
+		for (int i = 1; i < size + 1; ++i)
 		{
-			for (int j = 1; j < X + 1; ++j)
+			for (int j = 1; j < size + 1; ++j)
 			{
 				if (tab[i][j] == null)
 				{
