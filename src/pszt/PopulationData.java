@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PopulationData
 {
-	int size = 5;
+	int size = 20;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 
@@ -17,7 +17,7 @@ public class PopulationData
 
 	public void createPopulation()
 	{
-		popTabAction = new Integer[size*2][theCityData.size];
+		popTabAction = new Integer[size * 2][theCityData.size];
 		popTabOld = new Integer[size][theCityData.size];
 		popTab = new Integer[size][theCityData.size];
 		for (int i = 0; i < size; ++i)
@@ -56,7 +56,7 @@ public class PopulationData
 		{
 			for (int j = 0; j < theCityData.size; ++j)
 			{
-				popTabOld[i][j]=popTab[i][j];
+				popTabOld[i][j] = popTab[i][j];
 			}
 
 		}
@@ -74,20 +74,6 @@ public class PopulationData
 			System.out.print("\n");
 		}
 		System.out.print("\n");
-		
-		for (int i = 0; i < size; ++i)
-		{
-			for (int j = 0; j < theCityData.size; ++j)
-			{
-				System.out.print(popTab[i][j] + " ");
-			}
-			System.out.print("\n");
-		}
-		System.out.print("\n");
 	}
-	
-	
-	
-	
-	
+
 }

@@ -28,13 +28,10 @@ public class Crossbreed
 	public void Crossbreeding()
 	{
 		changeRepresentationXY();
-		show();
-		
 		int x;
 		for (int i = 0; i < thePopulationData.size / 2; ++i)
 		{
 			x = random(theCityData.size - 1) + 1;
-			System.out.print(" ." + x + ". \n");
 			for (int j = x; j < theCityData.size; ++j)
 			{
 				int a, b;

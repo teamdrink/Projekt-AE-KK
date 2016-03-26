@@ -54,10 +54,6 @@ public class PathLength
 
 	public void show()
 	{
-		for (int i = 0; i < thePopulationData.size; ++i)
-		{
-			System.out.print(pathLenght[i] + " ");
-		}
 		System.out.print("\nmax:"+max()+ " min:"+ min()+"\n");
 	}
 	

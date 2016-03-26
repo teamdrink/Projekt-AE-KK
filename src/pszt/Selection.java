@@ -50,7 +50,7 @@ public class Selection
 
 	public void selecting()
 	{
-		int x = 0,a=0;
+		int a=0;
 		thePathLength.calculatePathSelection();
 		Integer[] tab = new Integer[thePopulationData.size * 2];
 		for (int j = 0; j < thePopulationData.size * 2; ++j)
@@ -58,20 +58,17 @@ public class Selection
 			tab[j] = thePathLength.pathLenghtAction[j];
 		}
 		Arrays.sort(tab);
-		for (int j = 0; j < thePopulationData.size * 2; ++j)
-		{
-			System.out.print(" /" + tab[j] + "/  ");
-		}
 		
 		for (int i = 0; i < thePopulationData.size*2; ++i)
 		{
 			if (thePathLength.pathLenghtAction[i] < tab[thePopulationData.size])
 			{
 				for (int k = 0; k < theCityData.size; ++k)
-				{System.out.print(a);
+				{
 					thePopulationData.popTabOld[a][k] = thePopulationData.popTabAction[i][k];
-					++a;
+					
 				}
+				++a;
 			}
 
 		}
