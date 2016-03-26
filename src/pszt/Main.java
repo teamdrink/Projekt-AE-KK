@@ -17,7 +17,7 @@ public class Main
 		//theCityData.showList();
 
 		thePopulationData.createPopulation();
-		thePopulationData.showPopulation();
+		//thePopulationData.showPopulation();
 		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
 
 		for (int i = 0; i < 100; ++i)

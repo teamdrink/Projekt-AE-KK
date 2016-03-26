@@ -54,7 +54,7 @@ public class PathLength
 
 	public void show()
 	{
-		System.out.print("\nmax:"+max()+ " min:"+ min()+"\n");
+		System.out.print("max:"+max()+ " min:"+ min()+"\n");
 	}
 	
 	public void showX()
