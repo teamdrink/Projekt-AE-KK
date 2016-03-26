@@ -20,15 +20,16 @@ public class Mutation
 	}
 	
 	public void mutating(){
-		int a,b;
+		int a,b,x,y;
 		for (int i = 0; i < thePopulationData.size; ++i)
 		{	
 			a=random(theCityData.size);
 			b=random(theCityData.size);
-
-			thePopulationData.popTab[i][b]=thePopulationData.popTabOld[i][a];
-			thePopulationData.popTab[i][a]=thePopulationData.popTabOld[i][b];
+			x=thePopulationData.popTabAction[i][a];
+			y=thePopulationData.popTabAction[i][b];
+			thePopulationData.popTabAction[i][b]=x;
+			thePopulationData.popTabAction[i][a]=y;
 		}
-		thePopulationData.popTabOld = thePopulationData.popTab;
+		
 	}
 }

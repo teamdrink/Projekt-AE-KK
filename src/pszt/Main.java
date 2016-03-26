@@ -8,7 +8,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		CityData theCityData = new CityData();
-		theCityData.createList(3);
+		theCityData.createList(10);
 		theCityData.showList();
 		PopulationData thePopulationData = new PopulationData(theCityData);
 		thePopulationData.createPopulation();
@@ -19,11 +19,14 @@ public class Main
 		theCrossbreed.Crossbreeding();
 		theCrossbreed.show();
 		thePopulationData.showPopulation();
-		Selection theSelection = new Selection(thePopulationData,theCityData);
+		Selection theSelection = new Selection(thePopulationData,theCityData, thePathLength);
 		theSelection.addPopulation();
+		theSelection.show();
+		theMutation.mutating();
 		theSelection.show();
 		thePathLength.calculatePathSelection();
 		thePathLength.showX();
+		theSelection.selecting();
 
 		
 		
