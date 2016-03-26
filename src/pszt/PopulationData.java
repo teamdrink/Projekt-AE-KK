@@ -52,11 +52,29 @@ public class PopulationData
 			mask[a] = 0;
 			tab[y][i] = a;
 		}
-		popTabOld = popTab;
+		for (int i = 0; i < size; ++i)
+		{
+			for (int j = 0; j < theCityData.size; ++j)
+			{
+				popTabOld[i][j]=popTab[i][j];
+			}
+
+		}
+
 	}
 
 	public void showPopulation()
 	{
+		for (int i = 0; i < size; ++i)
+		{
+			for (int j = 0; j < theCityData.size; ++j)
+			{
+				System.out.print(popTabOld[i][j] + " ");
+			}
+			System.out.print("\n");
+		}
+		System.out.print("\n");
+		
 		for (int i = 0; i < size; ++i)
 		{
 			for (int j = 0; j < theCityData.size; ++j)
