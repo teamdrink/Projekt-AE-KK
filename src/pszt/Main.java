@@ -15,13 +15,19 @@ public class Main
 		thePopulationData.showPopulation();
 		PathLength thePathLength = new PathLength(thePopulationData,theCityData);
 		Mutation theMutation = new Mutation(thePopulationData,theCityData);
-			
-		for(int i = 0; i<10;++i){
+		Crossbreed theCrossbreed= new Crossbreed(thePopulationData, theCityData);
+		theCrossbreed.changeRepresentation();
+		theCrossbreed.show();
+		
+		
+		
+		
+		/*for(int i = 0; i<10;++i){
 			thePathLength.calculatePath();
 			thePathLength.show();
 			theMutation.mutating();
 			System.out.print("\n");
-		}
+		}*/
 				
 	}
 	

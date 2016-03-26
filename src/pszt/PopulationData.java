@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PopulationData
 {
-	int size = 10;
+	int size = 5;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 
@@ -65,17 +65,9 @@ public class PopulationData
 			}
 			System.out.print("\n");
 		}
+		System.out.print("\n");
 	}
 	
-	public void changeRepresentation(){
-		for (int i = 0; i < size; ++i)
-		{
-			for (int j = 0; j < theCityData.size; ++j)
-			{
-				
-			}
-		}
-	}
 	
 	
 	
