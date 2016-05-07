@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PopulationData
 {
-	int size = 20;
+	int size =500;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 
@@ -63,7 +63,7 @@ public class PopulationData
 
 	}
 
-	public void showPopulation()
+	public void show()
 	{
 		for (int i = 0; i < size; ++i)
 		{

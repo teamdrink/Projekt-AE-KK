@@ -2,6 +2,9 @@ package pszt;
 
 import java.util.Random;
 
+/**
+ * Algorytm Krzy¿owania
+ */
 public class Crossbreed
 {
 	private PopulationData thePopulationData;

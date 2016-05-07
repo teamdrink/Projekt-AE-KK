@@ -54,7 +54,7 @@ public class PathLength
 
 	public void show()
 	{
-		System.out.print("max:"+max()+ " min:"+ min()+"\n");
+		System.out.print("max:"+max()+ " min:"+ min()+" ");
 	}
 	
 	public void showX()
@@ -86,5 +86,12 @@ public class PathLength
 			}
 		}
 		return wynik;
+	}
+	
+	Integer[][] x= new Integer[10000][2];
+	public void plot(int i){
+		x[i][0]=max();
+		x[i][1]=min();
+		
 	}
 }

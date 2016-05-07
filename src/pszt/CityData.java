@@ -1,12 +1,22 @@
 package pszt;
 
+/**
+ * Klasa z danymi odleg³oœci miast
+ */
 public class CityData
 {
+	/**
+	 * Liczba miast
+	 */
 	public int size;
 
 	Integer[][] cityTab;
 
 
+	/**
+	 * @param x liczba miast
+	 * Zapisuje wartoœci odleg³oœci miast
+	 */
 	public void createList(int x)
 	{
 		size = x;
@@ -15,6 +25,9 @@ public class CityData
 		theRandomCity.randomCity(cityTab, x);
 	}
 
+	/**
+	 * Wyœwietla liste odleg³oœci miast
+	 */
 	public void showList()
 	{
 		for (int i = 0; i < size; ++i)
