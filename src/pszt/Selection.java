@@ -21,7 +21,6 @@ public class Selection
 		{
 			for (int j = 0; j < theCityData.size; ++j)
 			{
-
 				thePopulationData.popTabAction[i][j] = thePopulationData.popTabOld[i][j];
 			}
 		}
@@ -29,7 +28,6 @@ public class Selection
 		{
 			for (int j = 0; j < theCityData.size; ++j)
 			{
-
 				thePopulationData.popTabAction[i][j] = thePopulationData.popTab[i - thePopulationData.size][j];
 			}
 		}
@@ -50,7 +48,7 @@ public class Selection
 
 	public void selecting()
 	{
-		int a=0;
+		int a = 0;
 		thePathLength.calculatePathSelection();
 		Integer[] tab = new Integer[thePopulationData.size * 2];
 		for (int j = 0; j < thePopulationData.size * 2; ++j)
@@ -58,15 +56,15 @@ public class Selection
 			tab[j] = thePathLength.pathLenghtAction[j];
 		}
 		Arrays.sort(tab);
-		
-		for (int i = 0; i < thePopulationData.size*2; ++i)
+
+		for (int i = 0; i < thePopulationData.size * 2; ++i)
 		{
 			if (thePathLength.pathLenghtAction[i] < tab[thePopulationData.size])
 			{
 				for (int k = 0; k < theCityData.size; ++k)
 				{
 					thePopulationData.popTabOld[a][k] = thePopulationData.popTabAction[i][k];
-					
+
 				}
 				++a;
 			}

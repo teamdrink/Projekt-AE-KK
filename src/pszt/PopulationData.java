@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class PopulationData
 {
-	int size =500;
+	final int size =500;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 

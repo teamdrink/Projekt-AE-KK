@@ -36,13 +36,19 @@ public class Main
 				x = thePathLength.min();
 			}
 			y = thePathLength.min() / x * 100;
-			System.out.format("%.2f", y);
+			if (y < 100)
+				System.out.format(" %.2f", y);
+			else
+				System.out.format("%.2f", y);
 			System.out.print("% ");
-			for (int j = 0; j < y; ++j)
+			for (int j = 0; j < 100; ++j)
 			{
-				System.out.print("#");
+				if (j < y)
+					System.out.print("#");
+				else
+					System.out.print(" ");
 			}
-			System.out.print("\n");
+			System.out.print("|\n");
 		}
 		View theView = new View(thePathLength);
 		theView.paint();
