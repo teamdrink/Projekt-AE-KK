@@ -28,6 +28,9 @@ public class Crossbreed
 		return r.nextInt(x);
 	}
 
+	/**
+	 * funkcja krzy¿uj¹ca
+	 */
 	public void Crossbreeding()
 	{
 		changeRepresentationXY();
@@ -60,7 +63,6 @@ public class Crossbreed
 			}
 			for (int j = 0; j < theCityData.size; ++j)
 			{
-
 				popRep[i][j] = searchXY(thePopulationData.popTabOld[i][j]);
 			}
 		}

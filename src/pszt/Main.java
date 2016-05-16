@@ -6,16 +6,17 @@ public class Main
 	public static void main(String[] args)
 	{
 		CityData theCityData = new CityData();
-		PopulationData thePopulationData = new PopulationData(theCityData);
+		Exist theExist = new Exist(theCityData);
+		PopulationData thePopulationData = new PopulationData(theCityData,theExist);
 		PathLength thePathLength = new PathLength(thePopulationData, theCityData);
 		Mutation theMutation = new Mutation(thePopulationData, theCityData);
 		Selection theSelection = new Selection(thePopulationData, theCityData, thePathLength);
 
-		theCityData.createList(60);
-		// theCityData.showList();
+		theCityData.createList(5);
+	 theCityData.showList();
 
 		thePopulationData.createPopulation();
-		// thePopulationData.show();
+		 thePopulationData.show();
 		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
 		float y = 0, x = 0;
 		for (int i = 0; i < 1366; ++i)

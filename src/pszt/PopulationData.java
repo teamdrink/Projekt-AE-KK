@@ -4,15 +4,18 @@ import java.util.Random;
 
 public class PopulationData
 {
-	final int size =500;
+	final int size = 10;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 
 	private CityData theCityData;
 
-	public PopulationData(CityData theCityData)
+	private Exist theExist;
+
+	public PopulationData(CityData theCityData,Exist theExist)
 	{
 		this.theCityData = theCityData;
+		this.theExist = theExist;
 	}
 
 	public void createPopulation()
@@ -33,25 +36,34 @@ public class PopulationData
 		return r.nextInt(x);
 	}
 
+	/**
+	 * @param tab tablica populacji
+	 * @param x	liczba miast
+	 * @param y	dany osobnik
+	 * tworzy gen danego osobnika
+	 */
 	public void randomUnit(Integer[][] tab, int x, int y)
 	{
 		Integer[] mask = new Integer[x];
-		for (int j = 0; j < x; ++j)
-		{
-			mask[j] = 1;
 
-		}
-		int a;
-		for (int i = 0; i < x; ++i)
+		do
 		{
-			a = random(x);
-			while (mask[a] == 0)
+			for (int j = 0; j < x; ++j)
+			{
+				mask[j] = 1;
+			}
+			int a;
+			for (int i = 0; i < x; ++i)
 			{
 				a = random(x);
+				while (mask[a] == 0)
+				{
+					a = random(x);
+				}
+				mask[a] = 0;
+				tab[y][i] = a;
 			}
-			mask[a] = 0;
-			tab[y][i] = a;
-		}
+		} while (theExist.ifExist(tab, x, y) != true);
 		for (int i = 0; i < size; ++i)
 		{
 			for (int j = 0; j < theCityData.size; ++j)
