@@ -5,21 +5,23 @@ public class Main
 
 	public static void main(String[] args)
 	{
+		final int populationSize =300, citySize = 20, iterationSize = 1366;
+
 		CityData theCityData = new CityData();
 		Exist theExist = new Exist(theCityData);
-		PopulationData thePopulationData = new PopulationData(theCityData,theExist);
+		PopulationData thePopulationData = new PopulationData(theCityData, theExist, populationSize);
 		PathLength thePathLength = new PathLength(thePopulationData, theCityData);
-		Mutation theMutation = new Mutation(thePopulationData, theCityData);
+		Mutation theMutation = new Mutation(thePopulationData, theCityData, theExist);
 		Selection theSelection = new Selection(thePopulationData, theCityData, thePathLength);
 
-		theCityData.createList(5);
-	 theCityData.showList();
+		theCityData.createList(citySize);
+		theCityData.showList();
 
 		thePopulationData.createPopulation();
-		 thePopulationData.show();
-		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
+		thePopulationData.show();
+		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData, theExist);
 		float y = 0, x = 0;
-		for (int i = 0; i < 1366; ++i)
+		for (int i = 0; i < iterationSize; ++i)
 		{
 			System.out.format("%05d", i);
 			System.out.print(".");
@@ -51,6 +53,7 @@ public class Main
 			}
 			System.out.print("|\n");
 		}
+		//thePopulationData.show();
 		View theView = new View(thePathLength);
 		theView.paint();
 	}
