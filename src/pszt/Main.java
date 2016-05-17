@@ -1,11 +1,16 @@
 package pszt;
 
+/**
+ * @author Porojekt PSZTY
+ * Algorytm ewolucyjny
+ * Komiwoja¿er
+ */
 public class Main
 {
 
 	public static void main(String[] args)
 	{
-		final int populationSize =300, citySize = 20, iterationSize = 1366;
+		final int populationSize =150, citySize =50, iterationSize = 1366;
 
 		CityData theCityData = new CityData();
 		Exist theExist = new Exist(theCityData);
@@ -18,7 +23,7 @@ public class Main
 		theCityData.showList();
 
 		thePopulationData.createPopulation();
-		thePopulationData.show();
+		//thePopulationData.show();
 		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData, theExist);
 		float y = 0, x = 0;
 		for (int i = 0; i < iterationSize; ++i)

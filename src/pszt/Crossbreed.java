@@ -14,6 +14,12 @@ public class Crossbreed
 	Integer[] mask;
 	Integer[][] popRep, popRepOld;
 
+	/**
+	 * @param thePopulationData 
+	 * @param theCityData
+	 * @param theExist
+	 * konstruktor 
+	 */
 	public Crossbreed(PopulationData thePopulationData, CityData theCityData, Exist theExist)
 	{
 		this.thePopulationData = thePopulationData;
@@ -52,14 +58,11 @@ public class Crossbreed
 					popRep[2 * i + 1][j] = b;
 				}
 			} while (changeRepresentationYXOnce(2 * i) != true || changeRepresentationYXOnce(2 * i + 1) != true);
-			/*
-			 * for(int k=0;k<(int)50/thePopulationData.size;++k){
-			 * System.out.print("#"); ++load; }
-			 */
-			if ((float)32 / thePopulationData.size * i- load > 1)
+			
+			if ((float) 32 / thePopulationData.size * i - load > 1)
 			{
-				//System.out.print((int)(float)32*i / thePopulationData.size);
-				for (int k = 0; k < (int)(float)32*i / thePopulationData.size-load; ++k)
+				// System.out.print((int)(float)32*i / thePopulationData.size);
+				for (int k = 0; k < (int) (float) 32 * i / thePopulationData.size - load; ++k)
 				{
 					System.out.print("#");
 				}
@@ -72,6 +75,9 @@ public class Crossbreed
 
 	}
 
+	/**
+	 * Zamiana reprezentacji na reprezentacji "ci¹g³¹"
+	 */
 	public void changeRepresentationXY()
 	{
 
@@ -89,6 +95,10 @@ public class Crossbreed
 		popRepOld = popRep;
 	}
 
+	/**
+	 * @param x dane miasto
+	 * @return zwracamy jego zmienion¹ reprezentacje
+	 */
 	public int searchXY(int x)
 	{
 		int X = 0;
@@ -106,6 +116,9 @@ public class Crossbreed
 
 	}
 
+	/**
+	 * @param x liczba okreœlaj¹ca od którego elementu maski mamy j¹ przesówaæ
+	 */
 	public void moving(int x)
 	{
 		for (int i = x; i < theCityData.size - 1; ++i)

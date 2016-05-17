@@ -2,19 +2,22 @@ package pszt;
 
 import java.util.Random;
 
+/**
+ * Klasa odpowiedzialna za dane dotycz¹ce populacji
+ */
 public class PopulationData
 {
 	final int size;
 
 	Integer[][] popTab, popTabOld, popTabAction;
 
-	int load=0;
-	
+	int load = 0;
+
 	private CityData theCityData;
 
 	private Exist theExist;
 
-	public PopulationData(CityData theCityData,Exist theExist, int x)
+	public PopulationData(CityData theCityData, Exist theExist, int x)
 	{
 		this.theCityData = theCityData;
 		this.theExist = theExist;
@@ -29,17 +32,18 @@ public class PopulationData
 		for (int i = 0; i < size; ++i)
 		{
 			randomUnit(popTab, theCityData.size, i);
-			if ((float)100 / size * i- load > 1)
+			if ((float) 100 / size * i - load > 1)
 			{
-				//System.out.print((int)(float)100*i / size);
-				for (int k = 0; k < (int)(float)100*i / size-load; ++k)
+				// System.out.print((int)(float)100*i / size);
+				for (int k = 0; k < (int) (float) 100 * i / size - load; ++k)
 				{
 					System.out.print("#");
 				}
 				++load;
+
 			}
 		}
-
+		System.out.print("\n");
 	}
 
 	public int random(int x)
@@ -49,10 +53,12 @@ public class PopulationData
 	}
 
 	/**
-	 * @param tab tablica populacji
-	 * @param x	liczba miast
-	 * @param y	dany osobnik
-	 * tworzy gen danego osobnika
+	 * @param tab
+	 *            tablica populacji
+	 * @param x
+	 *            liczba miast
+	 * @param y
+	 *            dany osobnik tworzy gen danego osobnika
 	 */
 	public void randomUnit(Integer[][] tab, int x, int y)
 	{

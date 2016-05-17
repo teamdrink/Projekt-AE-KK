@@ -2,6 +2,9 @@ package pszt;
 
 import java.util.Random;
 
+/**
+ * Algorytm mutacji
+ */
 public class Mutation
 {
 
