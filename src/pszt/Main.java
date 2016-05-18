@@ -10,13 +10,12 @@ public class Main
 
 	public static void main(String[] args)
 	{
-		final int populationSize =150, citySize =50, iterationSize = 1366;
+		final int populationSize =2000, citySize =100, iterationSize = 1366;
 
 		CityData theCityData = new CityData();
-		Exist theExist = new Exist(theCityData);
-		PopulationData thePopulationData = new PopulationData(theCityData, theExist, populationSize);
+		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);
 		PathLength thePathLength = new PathLength(thePopulationData, theCityData);
-		Mutation theMutation = new Mutation(thePopulationData, theCityData, theExist);
+		Mutation theMutation = new Mutation(thePopulationData, theCityData);
 		Selection theSelection = new Selection(thePopulationData, theCityData, thePathLength);
 
 		theCityData.createList(citySize);
@@ -24,7 +23,7 @@ public class Main
 
 		thePopulationData.createPopulation();
 		//thePopulationData.show();
-		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData, theExist);
+		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
 		float y = 0, x = 0;
 		for (int i = 0; i < iterationSize; ++i)
 		{

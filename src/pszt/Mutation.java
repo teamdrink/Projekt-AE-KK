@@ -10,13 +10,11 @@ public class Mutation
 
 	private PopulationData thePopulationData;
 	private CityData theCityData;
-	private Exist theExist;
 
-	public Mutation(PopulationData thePopulationData, CityData theCityData,Exist theExist)
+	public Mutation(PopulationData thePopulationData, CityData theCityData)
 	{
 		this.thePopulationData = thePopulationData;
 		this.theCityData = theCityData;
-		this.theExist = theExist;
 	}
 
 	public int random(int x)
@@ -27,12 +25,16 @@ public class Mutation
 
 	public void mutating()
 	{
-		int a=0, b=0, x=0, y=0;
+		Exist theExist = new Exist(theCityData);
+		int a = 0, b = 0, x = 0, y = 0;
 		for (int i = 0; i < thePopulationData.size; ++i)
 		{
 			int j;
-			for(j=0;(j<10 || (theExist.ifExist(thePopulationData.popTabAction,theCityData.size,i) == false));++j){
-				if(j!=0){
+			for (j = 0; (j < 10
+					|| (theExist.ifExist(thePopulationData.popTabAction, theCityData.size, i) == false)); ++j)
+			{
+				if (j != 0)
+				{
 					thePopulationData.popTabAction[i][b] = y;
 					thePopulationData.popTabAction[i][a] = x;
 				}
@@ -43,11 +45,11 @@ public class Mutation
 				thePopulationData.popTabAction[i][b] = x;
 				thePopulationData.popTabAction[i][a] = y;
 			}
-			if(j==10){
+			if (j == 10)
+			{
 				thePopulationData.popTabAction[i][b] = y;
 				thePopulationData.popTabAction[i][a] = x;
 			}
-			//} while (theExist.ifExist(thePopulationData.popTabAction,theCityData.size,i) != true);
 		}
 
 	}

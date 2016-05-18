@@ -31,7 +31,7 @@ public class RandomCity
 		{
 			for (int j = i; j < x; ++j)
 			{
-				tab[i][j] = random(100) + 1 - 10;
+				tab[i][j] = random(100) + 1 - 5;
 				if (tab[i][j] < 0)
 				{
 					tab[i][j] = -1;

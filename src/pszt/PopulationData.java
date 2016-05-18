@@ -15,12 +15,10 @@ public class PopulationData
 
 	private CityData theCityData;
 
-	private Exist theExist;
 
-	public PopulationData(CityData theCityData, Exist theExist, int x)
+	public PopulationData(CityData theCityData, int x)
 	{
 		this.theCityData = theCityData;
-		this.theExist = theExist;
 		size = x;
 	}
 
@@ -62,6 +60,7 @@ public class PopulationData
 	 */
 	public void randomUnit(Integer[][] tab, int x, int y)
 	{
+		Exist theExist = new Exist(theCityData);
 		Integer[] mask = new Integer[x];
 
 		do

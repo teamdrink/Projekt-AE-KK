@@ -9,22 +9,19 @@ public class Crossbreed
 {
 	private PopulationData thePopulationData;
 	private CityData theCityData;
-	private Exist theExist;
 
 	Integer[] mask;
 	Integer[][] popRep, popRepOld;
 
 	/**
-	 * @param thePopulationData 
+	 * @param thePopulationData
 	 * @param theCityData
-	 * @param theExist
-	 * konstruktor 
+	 *            konstruktor
 	 */
-	public Crossbreed(PopulationData thePopulationData, CityData theCityData, Exist theExist)
+	public Crossbreed(PopulationData thePopulationData, CityData theCityData)
 	{
 		this.thePopulationData = thePopulationData;
 		this.theCityData = theCityData;
-		this.theExist = theExist;
 		mask = new Integer[theCityData.size];
 		popRep = new Integer[thePopulationData.size][theCityData.size];
 		popRepOld = new Integer[thePopulationData.size][theCityData.size];
@@ -40,39 +37,49 @@ public class Crossbreed
 	 * funkcja krzy¿uj¹ca
 	 */
 	public void Crossbreeding()
-	{
+	{		
+		
 		int load = 0;
 		changeRepresentationXY();
-		int x;
+		int x = 0, A = 0, B = 0;
+		int a = 0, b = 0;
 		for (int i = 0; i < thePopulationData.size / 2; ++i)
 		{
 			do
 			{
-				x = random(theCityData.size - 1) + 1;
-				for (int j = x; j < theCityData.size; ++j)
+				do
 				{
-					int a, b;
-					a = popRepOld[2 * i + 1][j];
-					b = popRepOld[2 * i][j];
-					popRep[2 * i][j] = a;
-					popRep[2 * i + 1][j] = b;
+					A = random(thePopulationData.size);
+					B = random(thePopulationData.size);
+				} while (A == B);
+				x = random(theCityData.size - 1) + 1;
+				for (int j = 0; j < theCityData.size; ++j)
+				{
+					a = popRepOld[A][j];
+					b = popRepOld[B][j];
+					if (j < x)
+					{
+						popRep[i * 2][j] = popRepOld[B][j];
+						popRep[i * 2 + 1][j] = popRepOld[A][j];
+					} else
+					{
+						popRep[i * 2][j] = a;
+						popRep[i * 2 + 1][j] = b;
+					}
 				}
-			} while (changeRepresentationYXOnce(2 * i) != true || changeRepresentationYXOnce(2 * i + 1) != true);
-			
+			} while (changeRepresentationYXOnce(i * 2) == false || changeRepresentationYXOnce(i * 2 + 1) == false);
+
 			if ((float) 32 / thePopulationData.size * i - load > 1)
 			{
-				// System.out.print((int)(float)32*i / thePopulationData.size);
 				for (int k = 0; k < (int) (float) 32 * i / thePopulationData.size - load; ++k)
 				{
 					System.out.print("#");
 				}
 				++load;
 			}
-			// System.out.print((float)i*2/thePopulationData.size*100+"%\n");
 		}
 		popRepOld = popRep;
 		changeRepresentationYX();
-
 	}
 
 	/**
@@ -96,7 +103,8 @@ public class Crossbreed
 	}
 
 	/**
-	 * @param x dane miasto
+	 * @param x
+	 *            dane miasto
 	 * @return zwracamy jego zmienion¹ reprezentacje
 	 */
 	public int searchXY(int x)
@@ -111,13 +119,12 @@ public class Crossbreed
 				i = theCityData.size;
 			}
 		}
-
 		return X;
-
 	}
 
 	/**
-	 * @param x liczba okreœlaj¹ca od którego elementu maski mamy j¹ przesówaæ
+	 * @param x
+	 *            liczba okreœlaj¹ca od którego elementu maski mamy j¹ przesówaæ
 	 */
 	public void moving(int x)
 	{
@@ -159,6 +166,7 @@ public class Crossbreed
 
 	public boolean changeRepresentationYXOnce(int i)
 	{
+		Exist theExist = new Exist(theCityData);
 		Integer[][] x = new Integer[1][theCityData.size];
 		Integer[][] copy = new Integer[1][theCityData.size];
 
