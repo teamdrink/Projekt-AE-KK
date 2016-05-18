@@ -8,6 +8,8 @@ import java.util.Random;
 public class RandomCity
 {
 
+	final int percent =0;
+
 	/**
 	 * @param x
 	 *            przedzia³
@@ -31,8 +33,8 @@ public class RandomCity
 		{
 			for (int j = i; j < x; ++j)
 			{
-				tab[i][j] = random(100) + 1 - 5;
-				if (tab[i][j] < 0)
+				tab[i][j] = random(100) + 1 - percent;
+				if (tab[i][j] <= 0)
 				{
 					tab[i][j] = -1;
 				}

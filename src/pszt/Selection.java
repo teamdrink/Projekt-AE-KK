@@ -2,6 +2,9 @@ package pszt;
 
 import java.util.Arrays;
 
+/**
+ * Klasa odpowiedzialna za selekcje
+ */
 public class Selection
 {
 	private PopulationData thePopulationData;

@@ -1,5 +1,8 @@
 package pszt;
 
+/**
+ * Klasa licz¹ca d³ugoœci scie¿ek
+ */
 public class PathLength
 {
 	private PopulationData thePopulationData;
@@ -54,7 +57,8 @@ public class PathLength
 
 	public void show()
 	{
-		System.out.print("max:"+max()+ " min:"+ min()+" ");
+		System.out.format("max:%04d min:%04d", max(),min());
+		//System.out.print("max:"+max()+ " min:"+ min()+" ");
 	}
 	
 	public void showX()

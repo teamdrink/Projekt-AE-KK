@@ -1,17 +1,30 @@
 package pszt;
 
 /**
- * @author Porojekt PSZTY
+ * Porojekt PSZTY
  * Algorytm ewolucyjny
  * Komiwoja¿er
  */
 public class Main
 {
 
+	/**
+	 * G³ówna pêtla programu
+	 */
 	public static void main(String[] args)
 	{
-		final int populationSize =2000, citySize =100, iterationSize = 1366;
-
+		final int iterationSize = 1366;
+		final int populationSize =1000, citySize =200;
+//1500,200,2%
+//1500,400,1%
+//2000,100,5%
+//500,25,30%
+//4000,800,0%
+//2000,400,0%
+		
+		
+		
+		
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);
 		PathLength thePathLength = new PathLength(thePopulationData, theCityData);
@@ -19,15 +32,18 @@ public class Main
 		Selection theSelection = new Selection(thePopulationData, theCityData, thePathLength);
 
 		theCityData.createList(citySize);
-		theCityData.showList();
+		//theCityData.showList();
 
 		thePopulationData.createPopulation();
 		//thePopulationData.show();
+
+		System.out.print("Rozpoczêcie ewolucji ...\n");
+		
 		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
 		float y = 0, x = 0;
 		for (int i = 0; i < iterationSize; ++i)
 		{
-			System.out.format("%05d", i);
+			System.out.format("%05d", i+1);
 			System.out.print(".");
 			theCrossbreed.Crossbreeding();
 			theSelection.addPopulation();

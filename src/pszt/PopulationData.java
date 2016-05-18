@@ -24,11 +24,13 @@ public class PopulationData
 
 	public void createPopulation()
 	{
+		System.out.print("Tworzenie populacji ...\n");
 		popTabAction = new Integer[size * 2][theCityData.size];
 		popTabOld = new Integer[size][theCityData.size];
 		popTab = new Integer[size][theCityData.size];
 		for (int i = 0; i < size; ++i)
 		{
+			
 			randomUnit(popTab, theCityData.size, i);
 			if ((float) 100 / size * i - load > 1)
 			{
