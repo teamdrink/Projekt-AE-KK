@@ -23,7 +23,6 @@ public class Main
 //2000,400,0%
 		
 		
-		LoadingFile a =new LoadingFile();
 		
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);

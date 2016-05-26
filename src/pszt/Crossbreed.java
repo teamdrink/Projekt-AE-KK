@@ -1,5 +1,6 @@
 package pszt;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -7,6 +8,10 @@ import java.util.Random;
  */
 public class Crossbreed
 {
+int procent= 20;
+int limit;
+	
+	
 	private PopulationData thePopulationData;
 	private CityData theCityData;
 
@@ -25,6 +30,7 @@ public class Crossbreed
 		mask = new Integer[theCityData.size];
 		popRep = new Integer[thePopulationData.size][theCityData.size];
 		popRepOld = new Integer[thePopulationData.size][theCityData.size];
+		
 	}
 
 	public int random(int x)
@@ -40,17 +46,24 @@ public class Crossbreed
 	{		
 		
 		int load = 0;
+		calculatePath();
 		changeRepresentationXY();
 		int x = 0, A = 0, B = 0;
 		int a = 0, b = 0;
+		
 		for (int i = 0; i < thePopulationData.size / 2; ++i)
 		{
 			do
 			{
 				do
 				{
+					do{
 					A = random(thePopulationData.size);
+					}while(limit<pathLenght[A]);
+					do{
 					B = random(thePopulationData.size);
+					}while(limit<pathLenght[B]);
+			
 				} while (A == B);
 				x = random(theCityData.size - 1) + 1;
 				for (int j = 0; j < theCityData.size; ++j)
@@ -80,6 +93,30 @@ public class Crossbreed
 		}
 		popRepOld = popRep;
 		changeRepresentationYX();
+	}
+	
+	Integer[] pathLenght ;
+	
+	public void calculatePath()
+	{
+		pathLenght = new Integer[thePopulationData.size];
+		for (int i = 0; i < thePopulationData.size; ++i)
+		{
+			pathLenght[i]=0;
+			for (int j = 0; j < theCityData.size - 1; ++j)
+			{
+				if (thePopulationData.popTabOld[i][j] < thePopulationData.popTabOld[i][j + 1])
+				{
+					pathLenght[i] += theCityData.cityTab[thePopulationData.popTabOld[i][j]][thePopulationData.popTabOld[i][j+ 1]];
+				} else
+				{
+					pathLenght[i] += theCityData.cityTab[thePopulationData.popTabOld[i][j+ 1]][thePopulationData.popTabOld[i][j]];
+				}
+			}
+		}
+		Integer[]pathLenght2 = pathLenght;
+		Arrays.sort(pathLenght2);
+		limit=pathLenght2[(int)(thePopulationData.size*procent/100)];
 	}
 
 	/**
