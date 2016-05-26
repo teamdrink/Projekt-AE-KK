@@ -7,6 +7,7 @@ import java.util.Random;
  */
 public class Mutation
 {
+	int x=10;
 
 	private PopulationData thePopulationData;
 	private CityData theCityData;
@@ -30,7 +31,7 @@ public class Mutation
 		for (int i = 0; i < thePopulationData.size; ++i)
 		{
 			int j;
-			for (j = 0; (j < 10
+			for (j = 0; (j < x
 					|| (theExist.ifExist(thePopulationData.popTabAction, theCityData.size, i) == false)); ++j)
 			{
 				if (j != 0)
@@ -45,7 +46,7 @@ public class Mutation
 				thePopulationData.popTabAction[i][b] = x;
 				thePopulationData.popTabAction[i][a] = y;
 			}
-			if (j == 10)
+			if (j == x)
 			{
 				thePopulationData.popTabAction[i][b] = y;
 				thePopulationData.popTabAction[i][a] = x;

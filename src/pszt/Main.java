@@ -17,7 +17,7 @@ public class Main
 		long stop;
 		start = System.currentTimeMillis();
 		final int iterationSize = 1366;
-		final int populationSize =100;
+		final int populationSize =500;
 //1500,200,2%
 //1500,400,1%
 //2000,100,5%
@@ -25,8 +25,8 @@ public class Main
 //4000,800,0%
 //2000,400,0%
 		
-		//RandomCity t = new RandomCity();
-		//t.randomCity(200);
+		RandomCity t = new RandomCity();
+		t.randomCity(50);
 		
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);

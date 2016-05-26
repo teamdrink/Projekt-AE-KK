@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Crossbreed
 {
-int procent= 25;
+int procent= 50;
 int limit;
 	
 	

@@ -8,7 +8,7 @@ import java.util.Random;
 public class RandomCity
 {
 
-	final int percent = 25;
+	final int percent =10;
 
 	/**
 	 * @param x
