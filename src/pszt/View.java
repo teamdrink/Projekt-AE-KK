@@ -38,19 +38,17 @@ class View extends JPanel
 
 	public void paintComponent(Graphics g)
 	{
-		int q=random(256);
-		int w=random(256);
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, 0 , 1366, 768 );
 		for (int i = 0; i < 1366; ++i)
 		{
-			//if (i % 2 == 0)
-			//{
-				g.setColor(new Color(q,i*255/1366,w));
-			/*} else
+			if (i % 2 == 0)
 			{
-				g.setColor(new Color(255,0+i*255/1366,));
-			}*/
+				g.setColor(Color.BLACK);
+			} else
+			{
+				g.setColor(Color.DARK_GRAY);
+			}
 			int a = thePathLength.x[i][1];
 			int b = thePathLength.x[i][0] - thePathLength.x[i][1];
 			g.fillRect(i, a/5-thePathLength.x[1365][1]/5+100 , 1, b/5+1 );

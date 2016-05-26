@@ -17,12 +17,11 @@ public class CityData
 	 * @param x liczba miast
 	 * Zapisuje wartoœci odleg³oœci miast
 	 */
-	public void createList(int x)
+	public void createList()
 	{
-		size = x;
-		cityTab = new Integer[x][x];
-		RandomCity theRandomCity = new RandomCity();
-		theRandomCity.randomCity(cityTab, x);
+		LoadingFile theLoadingFile = new LoadingFile();
+		cityTab = theLoadingFile.loadTable();
+		size= theLoadingFile.size();
 	}
 
 	/**

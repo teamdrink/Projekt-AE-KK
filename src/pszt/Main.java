@@ -14,7 +14,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		final int iterationSize = 1366;
-		final int populationSize =1000, citySize =200;
+		final int populationSize =1000;
 //1500,200,2%
 //1500,400,1%
 //2000,100,5%
@@ -23,7 +23,7 @@ public class Main
 //2000,400,0%
 		
 		
-		
+		LoadingFile a =new LoadingFile();
 		
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);
@@ -31,8 +31,8 @@ public class Main
 		Mutation theMutation = new Mutation(thePopulationData, theCityData);
 		Selection theSelection = new Selection(thePopulationData, theCityData, thePathLength);
 
-		theCityData.createList(citySize);
-		//theCityData.showList();
+		theCityData.createList();
+		theCityData.showList();
 
 		thePopulationData.createPopulation();
 		//thePopulationData.show();
