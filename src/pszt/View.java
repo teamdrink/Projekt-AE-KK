@@ -38,7 +38,7 @@ class View extends JPanel
 
 	public void paintComponent(Graphics g)
 	{
-		g.setColor(Color.DARK_GRAY);
+		g.setColor(Color.WHITE);
 		g.fillRect(0, 0 , 1366, 768 );
 		for (int i = 0; i < 1366; ++i)
 		{

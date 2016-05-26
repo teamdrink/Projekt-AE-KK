@@ -13,8 +13,11 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
+		long start;
+		long stop;
+		start = System.currentTimeMillis();
 		final int iterationSize = 1366;
-		final int populationSize =1000;
+		final int populationSize =100;
 //1500,200,2%
 //1500,400,1%
 //2000,100,5%
@@ -22,7 +25,8 @@ public class Main
 //4000,800,0%
 //2000,400,0%
 		
-		
+		//RandomCity t = new RandomCity();
+		//t.randomCity(200);
 		
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);
@@ -72,8 +76,11 @@ public class Main
 			}
 			System.out.print("|\n");
 		}
+		stop = System.currentTimeMillis();
+		System.out.print(stop-start);
 		//thePopulationData.show();
 		View theView = new View(thePathLength);
 		theView.paint();
+		
 	}
 }
