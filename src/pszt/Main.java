@@ -15,7 +15,7 @@ public class Main
 		long stop;
 		start = System.currentTimeMillis();
 		final int iterationSize = 1366;
-		final int populationSize = 100;
+		final int populationSize = 125;
 
 		// RandomCity t = new RandomCity();
 		// t.randomCity(150);
