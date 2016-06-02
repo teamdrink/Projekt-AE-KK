@@ -27,9 +27,9 @@ class View extends JPanel
 		frame.pack();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 
 	}
+
 	public int random(int x)
 	{
 		Random r = new Random();
@@ -39,7 +39,7 @@ class View extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0 , 1366, 768 );
+		g.fillRect(0, 0, 1366, 768);
 		for (int i = 0; i < 1366; ++i)
 		{
 			if (i % 2 == 0)
@@ -51,7 +51,7 @@ class View extends JPanel
 			}
 			int a = thePathLength.x[i][1];
 			int b = thePathLength.x[i][0] - thePathLength.x[i][1];
-			g.fillRect(i, a/5-thePathLength.x[1365][1]/5+100 , 1, b/5+1 );
+			g.fillRect(i, a / 5 - thePathLength.x[1365][1] / 5 + 100, 1, b / 5 + 1);
 
 		}
 	}

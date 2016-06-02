@@ -8,7 +8,7 @@ import java.util.Random;
 public class RandomCity
 {
 
-	final int percent =10;
+	final int percent = 0;
 
 	/**
 	 * @param x
@@ -27,9 +27,9 @@ public class RandomCity
 	 * @param x
 	 *            liczba miast
 	 */
-	public void randomCity( int x)
+	public void randomCity(int x)
 	{
-		Integer[][] tab =new Integer[x][x];
+		Integer[][] tab = new Integer[x][x];
 		for (int i = 0; i < x; ++i)
 		{
 			for (int j = i; j < x; ++j)
@@ -50,6 +50,5 @@ public class RandomCity
 			System.out.print("\n");
 		}
 	}
-
 
 }

@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class Mutation
 {
-	int x=10;
+	int x = 10;
 
 	private PopulationData thePopulationData;
 	private CityData theCityData;

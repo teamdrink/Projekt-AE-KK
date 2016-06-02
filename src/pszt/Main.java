@@ -1,9 +1,7 @@
 package pszt;
 
 /**
- * Porojekt PSZTY
- * Algorytm ewolucyjny
- * Komiwoja¿er
+ * Porojekt PSZTY Algorytm ewolucyjny Komiwoja¿er
  */
 public class Main
 {
@@ -17,17 +15,11 @@ public class Main
 		long stop;
 		start = System.currentTimeMillis();
 		final int iterationSize = 1366;
-		final int populationSize =500;
-//1500,200,2%
-//1500,400,1%
-//2000,100,5%
-//500,25,30%
-//4000,800,0%
-//2000,400,0%
-		
-		RandomCity t = new RandomCity();
-		t.randomCity(50);
-		
+		final int populationSize = 100;
+
+		// RandomCity t = new RandomCity();
+		// t.randomCity(150);
+
 		CityData theCityData = new CityData();
 		PopulationData thePopulationData = new PopulationData(theCityData, populationSize);
 		PathLength thePathLength = new PathLength(thePopulationData, theCityData);
@@ -38,15 +30,15 @@ public class Main
 		theCityData.showList();
 
 		thePopulationData.createPopulation();
-		//thePopulationData.show();
+		// thePopulationData.show();
 
 		System.out.print("Rozpoczêcie ewolucji ...\n");
-		
+
 		Crossbreed theCrossbreed = new Crossbreed(thePopulationData, theCityData);
 		float y = 0, x = 0;
 		for (int i = 0; i < iterationSize; ++i)
 		{
-			System.out.format("%05d", i+1);
+			System.out.format("%05d", i + 1);
 			System.out.print(".");
 			theCrossbreed.Crossbreeding();
 			theSelection.addPopulation();
@@ -77,10 +69,10 @@ public class Main
 			System.out.print("|\n");
 		}
 		stop = System.currentTimeMillis();
-		System.out.print(stop-start);
-		//thePopulationData.show();
+		System.out.print(stop - start);
+		// thePopulationData.show();
 		View theView = new View(thePathLength);
 		theView.paint();
-		
+
 	}
 }

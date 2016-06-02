@@ -13,15 +13,17 @@ public class Exist
 	}
 
 	/**
-	 * @param tab tablica populacji
-	 * @param x	liczba miast
-	 * @param y	dany osobnik
-	 * @return istnienie osobnika
-	 * sprawdza czy osobnik istnieje
+	 * @param tab
+	 *            tablica populacji
+	 * @param x
+	 *            liczba miast
+	 * @param y
+	 *            dany osobnik
+	 * @return istnienie osobnika sprawdza czy osobnik istnieje
 	 */
 	public boolean ifExist(Integer[][] tab, int x, int y)
 	{
-		for (int i = 0; i < x-1; ++i)
+		for (int i = 0; i < x - 1; ++i)
 		{
 			int lenght;
 
@@ -32,7 +34,8 @@ public class Exist
 			{
 				lenght = theCityData.cityTab[tab[y][i + 1]][tab[y][i]];
 			}
-			if(lenght==-1){
+			if (lenght == -1)
+			{
 				return false;
 			}
 		}

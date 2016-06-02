@@ -8,8 +8,8 @@ public class LoadingFile
 	private int a;
 
 	public Integer[][] loadTable()
-	{	
-		Integer[][] table=null;
+	{
+		Integer[][] table = null;
 		try
 		{
 			File file = new File("a.txt");
@@ -28,15 +28,17 @@ public class LoadingFile
 				}
 
 			}
-			
 
 		} catch (Exception ex)
 		{
 			ex.printStackTrace();
-		}return table;
-		
+		}
+		return table;
+
 	}
-	public int size(){
+
+	public int size()
+	{
 		return a;
 	}
 

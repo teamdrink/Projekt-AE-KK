@@ -15,7 +15,6 @@ public class PopulationData
 
 	private CityData theCityData;
 
-
 	public PopulationData(CityData theCityData, int x)
 	{
 		this.theCityData = theCityData;
@@ -30,7 +29,7 @@ public class PopulationData
 		popTab = new Integer[size][theCityData.size];
 		for (int i = 0; i < size; ++i)
 		{
-			
+
 			randomUnit(popTab, theCityData.size, i);
 			if ((float) 100 / size * i - load > 1)
 			{
